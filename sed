@@ -1,3 +1,14 @@
+# Commenting
+## find key in line and add leading #, if not already added
+COMMENT_FILE=test.txt
+COMMENT_KEY=findme
+sed -e "/${COMMENT_KEY?}/ s/^#*/#/g" -i ${COMMENT_FILE?}  # comment
+
+## find key in line and remove leading #
+COMMENT_FILE=test.txt
+COMMENT_KEY=findme
+sed -e "/${COMMENT_KEY?}/ s/^#*//#//g" -i ${COMMENT_FILE?}  # uncomment
+
 # return lines 5 through 10 from test.txt	
 sed -n '5,10p' test.txt
 
